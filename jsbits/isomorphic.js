@@ -1,5 +1,5 @@
-window.copyDOMIntoVTree = function copyDOMIntoVTree (vtree) {
-    walk (vtree, document.body.firstChild);
+window.copyDOMIntoVTree = function copyDOMIntoVTree (el, vtree) {
+    walk (vtree, el.firstChild);
 };
 
 window.walk = function walk (vtree, node) {

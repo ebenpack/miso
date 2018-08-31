@@ -213,8 +213,8 @@ foreign import javascript unsafe "$1($2);"
 
 -- | Copies DOM pointers into virtual dom
 -- entry point into isomorphic javascript
-foreign import javascript unsafe "copyDOMIntoVTree($1);"
-  copyDOMIntoVTree :: JSVal -> IO ()
+foreign import javascript unsafe "copyDOMIntoVTree($1, $2);"
+  copyDOMIntoVTree :: JSVal -> JSVal -> IO ()
 
 -- | Pins down the current callbacks for clearing later
 foreign import javascript unsafe "swapCallbacks();"

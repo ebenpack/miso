@@ -123,7 +123,8 @@ miso f = do
     let initialView = view model
     VTree (OI.Object iv) <- flip runView writeEvent initialView
     -- Initial diff can be bypassed, just copy DOM into VTree
-    copyDOMIntoVTree iv
+    mountEl <- mountElement mountPoint
+    copyDOMIntoVTree mountEl iv
     let initialVTree = VTree (OI.Object iv)
     -- Create virtual dom, perform initial diff
     liftIO (newIORef initialVTree)
